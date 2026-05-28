@@ -14,10 +14,12 @@ public class NetClientHandlerMixin {
     @Inject(method = "<init>(Lnet/minecraft/src/Minecraft;Ljava/lang/String;ILnet/minecraft/src/GuiScreen;)V", at = @At("RETURN"))
     private void injectInit(Minecraft par1Minecraft, String par2Str, int par3, GuiScreen par4GuiScreen, CallbackInfo ci) {
         FreeCam.allowFreeCam = false;
+        FreeCam.isFreeCam = false;
     }
 
     @Inject(method = "<init>(Lnet/minecraft/src/Minecraft;Ljava/lang/String;I)V", at = @At("RETURN"))
     private void injectInit(Minecraft par1Minecraft, String par2Str, int par3, CallbackInfo ci) {
         FreeCam.allowFreeCam = false;
+        FreeCam.isFreeCam = false;
     }
 }
